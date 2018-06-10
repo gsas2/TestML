@@ -147,9 +147,8 @@ module.exports = {
         res.json(formatGetItemResponse(itemData, categoryData));
       })
       .catch((error) => {
-        res.status(404).json({
-          message: error.message
-        });
+        console.log('GetItem error:', error.message|| error);
+        res.sendStatus(404);
       });
   }
 };
