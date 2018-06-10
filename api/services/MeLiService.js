@@ -2,27 +2,43 @@
 
 const request = require('request-promise-native');
 
-const SEARCH_ENDPOINT_URI = 'https://api.mercadolibre.com/sites/MLA/search'
+const SEARCH_ENDPOINT_URI = 'https://api.mercadolibre.com/sites/MLA/search';
+const ITEM_ENDPOINT_URI = 'https://api.mercadolibre.com/items';
+const CATEGORY_ENDPOINT_URI = 'https://api.mercadolibre.com/categories';
+
 const MAX_RESULTS = 4;
 
 module.exports = {
   search(query) {
-    console.log(`${SEARCH_ENDPOINT_URI}?q=​${query}`);
-    
     let options = {
       uri: SEARCH_ENDPOINT_URI,
       qs: {
         q: query,
         limit: MAX_RESULTS
       },
-      json: true // Automatically parses the JSON string in the response
+      json: true
     };
     return request(options);
   },
-  getItem() {
-    //TODO
+  getItem(id) {
+    let options = {
+      uri: `${ITEM_ENDPOINT_URI}/${id}`,
+      json: true
+    };
+    return request(options);
   },
-  getItemDescription() {
-    //TODO
+  getItemDescription(id) {
+    let options = {
+      uri: `${ITEM_ENDPOINT_URI}/${id}/description`,
+      json: true
+    };
+    return request(options);
+  },
+  getCategory(id) {
+    let options = {
+      uri: `${CATEGORY_ENDPOINT_URI}/${id}`,
+      json: true
+    };
+    return request(options);
   }
 };

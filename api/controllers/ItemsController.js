@@ -30,10 +30,8 @@ const parsePrice = (price) => {
   };
 };
 
-const formatCategories = (filtersData) => {
+const formatCategories = (rootPath) => {
   let response = [];
-  let categories = filtersData.find((filter) => filter.id === 'category');
-  let rootPath = _.get(categories, 'values[0].path_from_root', []);
   rootPath.forEach((pathItem) => {
     response.push(pathItem.name);
   });
@@ -65,10 +63,42 @@ const formatItems = (itemsData) => {
 };
 
 const formatGetItemsResponse = (data) => {
+  let categories = data.filters.find((filter) => filter.id === 'category');
+  let rootPath = _.get(categories, 'values[0].path_from_root', []);
+
   return {
     'author': AUTHOR,
-    'categories': formatCategories(data.filters),
+    'categories': formatCategories(rootPath),
     'items': formatItems(data.results)
+  };
+};
+
+const formatItem = (itemData) => {
+  let item = itemData[0];
+  let itemDescription = itemData[1];
+
+  let parsedPrice = parsePrice(item.price);
+  return {
+    'id': item.id,
+    'title': item.title,
+    'price': {
+      'currency': convertCurrencyToHTMLSymbol(item.currency_id),
+      'amount': parsedPrice.int,
+      'decimals': parsedPrice.decimals
+    },
+    'picture': _.get(item, 'pictures[0].url', item.thumbnail),
+    'condition': item.condition,
+    'free_shipping': item.shipping.free_shipping,
+    'sold_quantity': item.sold_quantity,
+    'description': itemDescription.plain_text
+  };
+};
+
+const formatGetItemResponse = (itemData, categoryData) => {
+  return {
+    'author': AUTHOR,
+    'categories': formatCategories(categoryData.path_from_root),
+    'item': formatItem(itemData)
   };
 };
 
@@ -92,6 +122,34 @@ module.exports = {
       });
   },
   getItem(req, res) {
-    res.send(req.params.id);
+    const getItemSchema = Joi.object().keys({
+      id: Joi.string().required()
+    });
+
+    let itemData;
+    Joi.validate(req.params, getItemSchema)
+      .then(() => {
+        return Promise.all([
+          MeLiService.getItem(req.params.id),
+          MeLiService.getItemDescription(req.params.id)
+        ]);
+      })
+      .then((data) => {
+        itemData = data;
+        let categoryId = _.get(itemData, '[0].category_id', '');
+        if (!categoryId) {
+          throw new Error('Could not find category for item');
+        }
+
+        return MeLiService.getCategory(categoryId);
+      })
+      .then((categoryData) => {
+        res.json(formatGetItemResponse(itemData, categoryData));
+      })
+      .catch((error) => {
+        res.status(404).json({
+          message: error.message
+        });
+      });
   }
 };
