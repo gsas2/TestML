@@ -1,0 +1,29 @@
+@import '_shared.scss';
+
+.SearchComponent {
+  display: inline-block;
+  width: calc(100% - 53px - 26px);
+  vertical-align: top;
+
+  input {
+    font-size: 18px;
+    border: none;
+    height: 36px;
+    width: calc(100% - 26px - 42px);
+    padding: 0 13px;
+    border-radius: 4px 0 0 4px;
+  }
+
+  button {
+    width: 41px;
+    height: 36px;
+    background-color: $meli-color-light-gray;
+    border: none;
+    border-radius: 0 4px 4px 0;
+
+    img {
+      vertical-align: bottom;
+    }
+  }
+
+}

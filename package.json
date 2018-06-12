@@ -19,8 +19,8 @@
     "nodemon": "^1.17.5"
   },
   "scripts": {
-    "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "build-css": "node-sass-chokidar --include-path ./src src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
     "start": "concurrently --kill-others-on-fail \"npm run watch-css\" \"npm run start-js\"",
     "build-js": "react-scripts build",

@@ -1,0 +1,16 @@
+@import '_shared.scss';
+
+.meli-header {
+  background-color: $meli-color-yellow;
+
+  .content {
+    height: 46px;
+    max-width: 979px;
+    margin: 0 auto;
+    padding: 10px 0 0;
+
+    .logo {
+      margin-right: 26px;
+    }
+  }
+}
