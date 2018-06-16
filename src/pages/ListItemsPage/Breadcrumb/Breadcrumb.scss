@@ -1,0 +1,16 @@
+@import "_shared.scss";
+
+.breadcrumb {
+  margin: 16px 0;
+  padding: 0;
+  font-size: 14px;
+  color: $meli-color-gray;
+
+  li {
+    display: inline;
+
+    .separator {
+      margin: 0 10px;
+    }
+  }
+}

@@ -1,6 +1,16 @@
 import React from 'react';
+import Breadcrumb from './Breadcrumb/Breadcrumb';
 import ListItem from './ListItem/ListItem';
+
 import './ListItemsPage.css';
+
+const categories = [
+  "Electrónica, Audio y Video",
+  "Audio",
+  "Audio Portátil  y Radios",
+  "iPod",
+  "Reproductores"
+];
 
 const products = [
   {
@@ -60,13 +70,13 @@ const products = [
 const ListItemsPage = () => (
   <div className="listItemsPage">
     <div className="breadcrumbContainer">
-      Lorem > Ipsum > ... > IPod
+      <Breadcrumb categories={categories} />
     </div>
     <div className="resultsContainer">
-      { products.map(product => (
-          <div className="resultContainer">
+      { products.map((product, index) => (
+          <div key={index} className="resultContainer">
             <ListItem product={product} />
-            <div className="itemSeparator" />
+            {index+1 < products.length ? <div className="itemSeparator" /> : null}
           </div>
         )) }
     </div>
