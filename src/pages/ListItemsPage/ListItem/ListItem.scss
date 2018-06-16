@@ -1,0 +1,36 @@
+@import "_shared.scss";
+
+.listItem {
+  display: grid;
+  grid-template-columns: 180px 426px 132px 177px;
+  padding: 16px;
+  grid-column-gap: 16px;
+
+  .imageContainer {
+    img {
+      height: 180px;
+      width: 180px;
+      border-radius: 4px;
+    }
+  }
+
+  .detailsContainer {
+    .price {
+      margin: 16px 0 32px 0;
+      font-size: 24px;
+
+      .freeShipping {
+        margin-left: 10px;
+      }
+    }
+    .description {
+      font-size: 18px;
+    }
+  }
+
+  .locationContainer {
+    margin-top: 40px;
+    font-size: 12px;
+    color: $meli-color-gray;
+  }
+}
