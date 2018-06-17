@@ -9,6 +9,10 @@
     border-radius: 4px;
 
     .resultContainer {
+      a {
+        text-decoration: none;
+        color: $meli-color-black;
+      }
       .itemSeparator {
         border-top: 1px solid $meli-color-light-gray;
         margin: 0 20px;

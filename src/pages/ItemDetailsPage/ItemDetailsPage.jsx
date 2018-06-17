@@ -1,5 +1,5 @@
 import React from 'react';
-import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
+import Breadcrumb from '../../common/components/Breadcrumb/Breadcrumb';
 import PriceBox from './PriceBox/PriceBox';
 import './ItemDetailsPage.css';
 
