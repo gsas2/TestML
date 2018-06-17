@@ -1,0 +1,39 @@
+@import "_shared.scss";
+
+.priceBox {
+  margin: 32px 32px 0 22px;
+  .extraDetails {
+    margin-bottom: 16px;
+    font-size: 14px;
+    .condition {
+    }
+    .itemsSold {
+    }
+    .freeShipping {
+      margin-left: 10px;
+      vertical-align: bottom;
+    }
+  }
+  .title {
+    margin-bottom: 32px;
+    font-size: 24px;
+    font-weight: 900;
+  }
+  .price {
+    margin-bottom: 32px;
+    font-size: 46px;
+    .decimals {
+      font-size: 22px;
+      vertical-align: top;
+      line-height: 38px;      
+    }
+  }
+  button {
+    background-color: $meli-color-blue;
+    width: 100%;
+    height: 46px;
+    font-size: 17px;
+    color: $meli-color-white;
+    border-radius: 4px;
+  }
+}

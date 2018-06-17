@@ -14,7 +14,7 @@ const Breadcrumb = ({categories}) => (
 );
 
 Breadcrumb.propTypes = {
-  titles: PropTypes.arrayOf(PropTypes.string).isRequired
+  categories: PropTypes.arrayOf(PropTypes.string).isRequired
 };
 
 export default Breadcrumb;

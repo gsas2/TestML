@@ -1,0 +1,13 @@
+@import "_shared.scss";
+
+.itemDetailsPage {
+  margin: 0 auto;
+  max-width: $meli-containers-max-width;
+
+  .detailsContainer {
+    background-color: $meli-color-white;
+    border-radius: 4px;
+    display: grid;
+    grid-template-columns: 680px auto;
+  }
+}

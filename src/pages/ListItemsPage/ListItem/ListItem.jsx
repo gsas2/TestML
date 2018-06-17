@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './ListItem.css';
-import FreeShippingIcon from './ic_shipping.png';
-import FreeShippingIconX2 from './ic_shipping@2x.png.png';
+import FreeShippingIcon from '../../../common/assets/ic_shipping.png';
+import FreeShippingIconX2 from '../../../common/assets/ic_shipping@2x.png.png';
 
 const ListItem = ({product}) => (
   <div className="listItem">
