@@ -19,7 +19,9 @@
     .price {
       margin: 16px 0 32px 0;
       font-size: 24px;
-
+      .MeLiPrice {
+        display: inline-block;
+      }
       .freeShipping {
         margin-left: 10px;
       }

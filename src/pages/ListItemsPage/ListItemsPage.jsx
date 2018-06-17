@@ -17,9 +17,9 @@ const products = [
       "id": "MLA666799963",
       "title": "Ipod Classic",
       "price": {
-          "currency": "$",
+          "currency": "ARS",
           "amount": 1300,
-          "decimals": 0
+          "decimals": 99
       },
       "picture": "http://mla-s2-p.mlstatic.com/928485-MLA25600636874_052017-I.jpg",
       "condition": "new",
@@ -30,7 +30,7 @@ const products = [
       "id": "MLA717988441",
       "title": "Ipod 7ma Generación 16 Gb",
       "price": {
-          "currency": "$",
+          "currency": "ARS",
           "amount": 850,
           "decimals": 0
       },
@@ -43,7 +43,7 @@ const products = [
       "id": "MLA697459513",
       "title": "Ipod Touch 4ta Generacion 32 Gb",
       "price": {
-          "currency": "$",
+          "currency": "ARS",
           "amount": 680,
           "decimals": 0
       },
@@ -56,7 +56,7 @@ const products = [
       "id": "MLA711127459",
       "title": "Ipod Touch 6 Último Modelo Gold 32gb Permuto",
       "price": {
-          "currency": "$",
+          "currency": "ARS",
           "amount": 7900,
           "decimals": 0
       },

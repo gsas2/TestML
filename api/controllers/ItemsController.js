@@ -8,20 +8,6 @@ const AUTHOR = {
   'lastname': 'Sas',       
 }
 
-const convertCurrencyToHTMLSymbol = (currency) => {
-  let symbol;
-  switch(currency) {
-    case 'ARS':
-      symbol = '$';
-      break;
-    default: 
-      symbol = currency;
-      break;
-  };
-
-  return symbol;
-};
-
 const parsePrice = (price) => {
   let intPart = Math.floor(price);
   return {
@@ -48,7 +34,7 @@ const formatItems = (itemsData) => {
       'id': item.id,
       'title': item.title,
       'price': {
-        'currency': convertCurrencyToHTMLSymbol(item.currency_id),
+        'currency': item.currency_id,
         'amount': parsedPrice.int,
         'decimals': parsedPrice.decimals
       },
@@ -82,7 +68,7 @@ const formatItem = (itemData) => {
     'id': item.id,
     'title': item.title,
     'price': {
-      'currency': convertCurrencyToHTMLSymbol(item.currency_id),
+      'currency': item.currency_id,
       'amount': parsedPrice.int,
       'decimals': parsedPrice.decimals
     },

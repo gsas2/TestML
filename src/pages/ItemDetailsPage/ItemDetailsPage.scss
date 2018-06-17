@@ -9,5 +9,29 @@
     border-radius: 4px;
     display: grid;
     grid-template-columns: 680px auto;
+
+    .imageContainer {
+      img {
+        display: block;
+        max-width:680px;
+        max-height:680px;
+        width: auto;
+        height: auto;
+        margin: auto;
+      }
+    }
+
+    .descriptionContainer {
+      margin: 32px 0 32px 32px;
+      h1 {
+        font-size: 28px;
+        margin: 0 0 32px;
+        font-weight: 400;
+      }
+      .description {
+        font-size: 16px;
+        color: $meli-color-gray;
+      }
+    }
   }
 }

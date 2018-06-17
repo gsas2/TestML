@@ -5,9 +5,8 @@
   .extraDetails {
     margin-bottom: 16px;
     font-size: 14px;
-    .condition {
-    }
-    .itemsSold {
+    .separator {
+      margin: 0 8px;
     }
     .freeShipping {
       margin-left: 10px;
@@ -22,11 +21,6 @@
   .price {
     margin-bottom: 32px;
     font-size: 46px;
-    .decimals {
-      font-size: 22px;
-      vertical-align: top;
-      line-height: 38px;      
-    }
   }
   button {
     background-color: $meli-color-blue;
