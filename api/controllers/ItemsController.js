@@ -8,11 +8,20 @@ const AUTHOR = {
   'lastname': 'Sas',       
 }
 
+const translatedCondition = (condition) => {
+  const translations = {
+    'new': 'Nuevo',
+    'used': 'Usado'
+  };
+
+  return translations[condition] || '';
+};
+
 const parsePrice = (price) => {
   let intPart = Math.floor(price);
   return {
     'int': intPart,
-    'decimals': price - intPart
+    'decimals': (price - intPart).toFixed(2) * 100
   };
 };
 
@@ -39,7 +48,7 @@ const formatItems = (itemsData) => {
         'decimals': parsedPrice.decimals
       },
       'picture': item.thumbnail,
-      'condition': item.condition,
+      'condition': translatedCondition(item.condition),
       'free_shipping': item.shipping.free_shipping,
       'location': item.address.state_name
     });
@@ -73,7 +82,7 @@ const formatItem = (itemData) => {
       'decimals': parsedPrice.decimals
     },
     'picture': _.get(item, 'pictures[0].url', item.thumbnail),
-    'condition': item.condition,
+    'condition': translatedCondition(item.condition),
     'free_shipping': item.shipping.free_shipping,
     'sold_quantity': item.sold_quantity,
     'description': itemDescription.plain_text

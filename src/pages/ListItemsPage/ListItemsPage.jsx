@@ -11,10 +11,20 @@ class ListItemsPage extends React.Component {
     items: []
   }
 
-  componentDidMount() {
+  dataFetch() {
     const params = new URLSearchParams(this.props.location.search);
     const search = params.get('search');
     GetItems(search).then(({ data }) => this.setState(data));
+  }
+
+  componentDidMount() {
+    this.dataFetch();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.location.search !== prevProps.location.search) {
+      this.dataFetch();
+    }
   }
 
   render() {

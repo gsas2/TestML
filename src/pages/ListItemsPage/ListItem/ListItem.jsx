@@ -12,10 +12,7 @@ const ListItem = ({item}) => (
     </div>
     <div className="detailsContainer">
       <div className="price">
-        <MeLiPrice
-          currency={item.price.currency}
-          amount={item.price.amount}
-          decimals={item.price.decimals} />
+        <MeLiPrice price={item.price} />
         { item.free_shipping &&
           <img className="freeShipping"
             src={FreeShippingIcon}

@@ -10,7 +10,7 @@ const PriceBox = ({condition, itemsSold, freeShipping, title, price}) => (
     <div className="extraDetails">
       <span className="condition">{condition}</span>
       <span className="separator">-</span>
-      <span className="itemsSold">{itemsSold} {itemsSold === 1 ? 'Vendido' : 'Vendidos'}</span>
+      <span className="itemsSold">{itemsSold} {itemsSold === 1 ? 'vendido' : 'vendidos'}</span>
       { freeShipping &&
         <img className="freeShipping"
             src={FreeShippingIcon}
@@ -20,7 +20,7 @@ const PriceBox = ({condition, itemsSold, freeShipping, title, price}) => (
     </div>
     <div className="title">{title}</div>
     <div className="price">
-      <MeLiPrice currency={price.currency} amount={price.amount} decimals={price.decimals} />
+      <MeLiPrice price={price} />
     </div>
     <button>Comprar</button>
   </div>
