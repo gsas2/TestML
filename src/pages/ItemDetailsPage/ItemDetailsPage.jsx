@@ -1,4 +1,5 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import Breadcrumb from '../../common/components/Breadcrumb/Breadcrumb';
 import PriceBox from './PriceBox/PriceBox';
 import { GetItemDetails } from '../../services/ItemsServices';
@@ -18,6 +19,12 @@ class ItemDetailsPage extends React.Component {
     const {categories, item} = this.state;
     return (
       <div className="itemDetailsPage">
+        {item && 
+          <Helmet>
+            <title>{item.title} - TestML</title>
+            <meta name="description" content={`TestML - ${item.title}`}/>
+          </Helmet>
+        }
         <div className="breadcrumbContainer">
           <Breadcrumb categories={categories} />
         </div>
