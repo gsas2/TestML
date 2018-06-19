@@ -6,7 +6,7 @@ import FreeShippingIconX2 from '../../../common/assets/ic_shipping@2x.png.png';
 import './PriceBox.css';
 
 const PriceBox = ({condition, itemsSold, freeShipping, title, price}) => (
-  <div className="priceBox">
+  <section className="priceBox">
     <div className="extraDetails">
       <span className="condition">{condition}</span>
       <span className="separator">-</span>
@@ -18,12 +18,14 @@ const PriceBox = ({condition, itemsSold, freeShipping, title, price}) => (
             alt="Envío Gratis" />
       }
     </div>
-    <div className="title">{title}</div>
-    <div className="price">
-      <MeLiPrice price={price} />
-    </div>
-    <button>Comprar</button>
-  </div>
+    <h1 className="title">{title}</h1>
+    <form>
+      <div className="price">
+        <MeLiPrice price={price} />
+      </div>
+      <button>Comprar</button>
+    </form>
+  </section>
 );
 
 PriceBox.propTypes = {

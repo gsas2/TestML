@@ -3,18 +3,18 @@
 .itemDetailsPage {
   margin: 0 auto;
   max-width: $meli-containers-max-width;
+  min-width: $meli-containers-min-width;
 
   .detailsContainer {
     background-color: $meli-color-white;
     border-radius: 4px;
     display: grid;
-    grid-template-columns: 680px auto;
+    grid-template-columns: 69.5% auto;
 
     .imageContainer {
       img {
         display: block;
-        max-width:680px;
-        max-height:680px;
+        max-width: 100%;
         width: auto;
         height: auto;
         margin: auto;
@@ -23,7 +23,7 @@
 
     .descriptionContainer {
       margin: 32px 0 32px 32px;
-      h1 {
+      .title {
         font-size: 28px;
         margin: 0 0 32px;
         font-weight: 400;

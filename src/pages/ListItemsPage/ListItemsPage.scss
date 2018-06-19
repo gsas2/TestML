@@ -3,6 +3,7 @@
 .listItemsPage {
   margin: 0 auto;
   max-width: $meli-containers-max-width;
+  min-width: $meli-containers-min-width;
 
   .resultsContainer {
     background-color: $meli-color-white;

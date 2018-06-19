@@ -12,7 +12,7 @@ const MainLayout = () => (
     <div>
       <header className="meli-header">
         <div className="content">
-          <Link to="/">
+          <Link to="/" title="Volver a la home">
             <img className="logo"
               src={Logo}
               srcSet={[`${Logo} 1x`, `${Logo2X} 2x`]}

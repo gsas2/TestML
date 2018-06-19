@@ -8,7 +8,7 @@ import MeLiPrice from '../../../common/components/MeLiPrice/MeLiPrice';
 const ListItem = ({item}) => (
   <div className="listItem">
     <div className="imageContainer">
-      <img src={item.picture} alt="Product" />
+      <img src={item.picture} alt={item.title} />
     </div>
     <div className="detailsContainer">
       <div className="price">

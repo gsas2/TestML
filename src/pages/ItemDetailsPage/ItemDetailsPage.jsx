@@ -31,7 +31,7 @@ class ItemDetailsPage extends React.Component {
         {item &&
           <div className="detailsContainer">
             <div className="imageContainer">
-              <img src={item.picture} alt="product" />
+              <img src={item.picture} alt={item.title} />
             </div>
             <PriceBox
               condition={item.condition}
@@ -39,12 +39,12 @@ class ItemDetailsPage extends React.Component {
               title={item.title}
               price={item.price}
               freeShipping={item.free_shipping} />
-            <div className="descriptionContainer">
-              <h1>Descripción del producto</h1>
+            <section className="descriptionContainer">
+              <h2 className="title">Descripción del producto</h2>
               <div className="description">
                 <p dangerouslySetInnerHTML={{__html: item.description}}></p>
               </div>
-            </div>
+            </section>
           </div>
         }
       </div>

@@ -35,7 +35,7 @@ class SearchComponent extends React.Component {
             <img
               src={searchIcon}
               srcSet={[`${searchIcon} 1x`, `${searchIcon2X} 2x`]}
-              alt="search icon" />
+              alt="Icono de lupa" />
           </button>
         </form>
       </div>

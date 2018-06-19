@@ -2,6 +2,7 @@
 
 .meli-header {
   background-color: $meli-color-yellow;
+  min-width: $meli-containers-min-width;
 
   .content {
     height: 46px;
